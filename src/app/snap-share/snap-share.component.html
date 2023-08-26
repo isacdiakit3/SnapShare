@@ -1,0 +1,11 @@
+<div class="snap-share-card" [ngClass]="{snapped: bouttontext==='Oops un snap !'}">
+    <h1>{{Isac.titre}}</h1>
+    <p>{{Isac.description}}</p>
+    <p>mis en ligne {{Isac.date}}</p>
+    <p><img [src]="Isac.imageUrl" [alt]="Isac.titre"></p>
+    <p>
+        <button (click)="onSnap()">{{bouttontext}}</button>
+        ❤️ {{Isac.snaps}}
+    </p>
+    <p *ngIf="Isac.location">Photo prise à {{Isac.location}}</p>
+</div>
