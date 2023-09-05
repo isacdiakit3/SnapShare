@@ -1,4 +1,5 @@
 export class SnapShare{
+    id!:number
     titre!:string
     description!:string
     imageUrl!: string

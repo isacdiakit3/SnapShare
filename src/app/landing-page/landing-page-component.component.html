@@ -1,0 +1,11 @@
+<div class="landing-block">
+  <form #emailForm = "ngForm" (ngSubmit)="onSubmit(emailForm)" >
+    <label for="emailInput">Veillez saisir votre email pour souscrire au Newsletter</label>
+    <input type="email" id="emailInput" [(ngModel)]="userEmail" name="userEmail">
+    <button type="submit">OK!</button>
+  </form>
+    <img src="https://i.pinimg.com/originals/f2/29/53/f22953d45cc1ff447fd6ce3c9353556b.jpg" alt="Snapshare logo">
+    <div class="landing-links">
+      <a routerLink="snapShare" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">Continuer vers SnapShare</a>
+    </div>
+  </div>

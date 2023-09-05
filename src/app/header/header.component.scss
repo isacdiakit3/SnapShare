@@ -1,0 +1,28 @@
+header {
+    text-align: center;
+    background-color: #EEE;
+    margin-bottom: 20px;
+    padding: 10px;
+    nav{
+        align-items: center;
+        text-align:center;
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: 0%;
+        a{
+            margin: 10px;
+            text-decoration: none;
+            color: #000;
+            &:hover{
+                text-decoration: underline;
+                color: green
+            }
+           
+        }
+    }
+    .active{
+        color: aqua;
+        color: green
+    }
+  }

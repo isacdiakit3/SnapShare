@@ -1,0 +1,25 @@
+.landing-block {
+    text-align: center;
+    img{
+        height: 300px;
+    }
+  }
+  
+  .landing-links {
+    width: 100%;
+    text-align: center;
+
+  }
+  .active{
+    color: aqua;
+    color: green
+}
+a{
+    color: #000;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+        color: green
+        
+    }
+}

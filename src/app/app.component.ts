@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import { SnapShare } from './model/snap-share.model';
+import { Observable, filter, of,interval, map, tap,concatMap,mergeMap,switchMap,exhaustMap,take,delay } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,52 +8,50 @@ import { SnapShare } from './model/snap-share.model';
 })
 export class AppComponent implements OnInit{
   title = 'SnapShare';
-  snapShares!:SnapShare[]
-  monSnap!: SnapShare
-  maFleurPreferee!: SnapShare
+  interval$!:Observable<string>
+  redTrainsCalled = 0
+  yellowTrainsCalled=0
+
+  
   ngOnInit(): void {
-    this.snapShares = [
-      {
-        titre:"Fleur",
-        description:"tournesol",
-        imageUrl:"https://cdn.pixabay.com/photo/2023/08/17/17/41/coneflower-8197067_640.jpg",
-        date:new Date(),
-        snaps:0,
-        location:"Chine"
-      },
-      {
-        titre:"Fleur",
-        description:"Ma Fleur Preferee",
-        imageUrl:"https://cdn.pixabay.com/photo/2020/07/24/12/08/water-lily-5433828_640.jpg",
-       date:new Date,
-        snaps:0,
-        location:"France"
-      },
-      {
-        titre:"Cerveau",
-        description:"Isac Newton",
-        imageUrl:"https://cdn.pixabay.com/photo/2023/08/16/03/51/ai-generated-8193209_640.jpg",
-        date:new Date(),
-        snaps:0,
-        location:"laboratoire"
-      },
-      {
-        titre:"Vacances",
-        description:"au bord de la mer",
-        imageUrl:"https://cdn.pixabay.com/photo/2023/08/12/21/08/clipart-8186457_640.jpg",
-       date:new Date,
-        snaps:0,
-        location:"Miami"
-      },
-      {
-        titre:"Rue",
-        description:"bande dessinée",
-        imageUrl:"https://cdn.pixabay.com/photo/2023/08/16/03/52/ai-generated-8193214_640.jpg",
-       date:new Date,
-        snaps:0,
-        location:"Bamako"
-      }
-    ]
     
-  }
-}
+    // this.interval$ = interval(1000).pipe(
+    //   filter(value=>value % 3 ===0),
+    //   map(value=>value % 2 ===0 ?
+    //     `je suis ${value} et je suis pair`:
+    //     `je suis ${value} et je suis impair`),
+        
+    // )
+      }
+      // onlogger(text:string) :void{
+      //   console.log(text)
+      // }
+    }
+    
+    
+  //   interval(500).pipe(
+  //     take(10),
+  //     map(value => value % 2 === 0 ? 'rouge' : 'jaune'),
+  //     tap(color => console.log(`La lumière s'allume en %c${color}`, `color: ${this.translateColor(color)}`)),
+  //     mergeMap(color => this.getTrainObservable$(color)),
+  //     tap(train => console.log(`Train %c${train.color} ${train.trainIndex} arrivé !`, `font-weight: bold; color: ${this.translateColor(train.color)}`))
+  //   ).subscribe();
+  // }
+
+  // getTrainObservable$(color: 'rouge' | 'jaune') {
+  //   const isRedTrain = color === 'rouge';
+  //   isRedTrain ? this.redTrainsCalled++ : this.yellowTrainsCalled++;
+  //   const trainIndex = isRedTrain ? this.redTrainsCalled : this.yellowTrainsCalled;
+  //   console.log(`Train %c${color} ${trainIndex} appelé !`, `text-decoration: underline; color: ${this.translateColor(color)}`);
+  //   return of({ color, trainIndex }).pipe(
+  //     delay(isRedTrain ? 5000 : 6000)
+  //   );
+  // }
+
+  // translateColor(color: 'rouge' | 'jaune') {
+  //   return color === 'rouge' ? 'red' : 'yellow';
+  // }
+
+  // }
+  
+
